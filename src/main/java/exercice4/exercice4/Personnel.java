@@ -2,7 +2,7 @@ package exercice4.exercice4;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-public final class Personnel  {
+public final class Personnel  implements InterfacePersonnel{
 	  private int id;
 	    private String nom;
 	    private String prenom;
@@ -23,10 +23,12 @@ public final class Personnel  {
 		}
 		public static class Builder{
 			//parametres obligatoires
+			
 			private int id;
 		    private String nom;
 		    private String prenom;
 		    private LocalDate dateNaissance;
+		    
 		    //parametres fonctionnels
 		    private String fonction;
 		    List<Integer> tels= new ArrayList<Integer>();
@@ -36,11 +38,25 @@ public final class Personnel  {
 				this.prenom = prenom;
 				this.dateNaissance = dateNaissance;
 			}
+		    
+		    //changer date de naissance
 		      public Builder changer(LocalDate dateNaissance) {
 		    	   this.dateNaissance=dateNaissance;
 		    	   return this;
 		    	   
 		       }
+		      //ajout fonction
+		      public Builder addFonction(String fn) {
+		     		
+		     		this.fonction=fn;
+		     		return this;
+		     	}//ajout numero de telephone
+		     	public Builder addDateNumeroTelephone( Integer numero) {
+		     		this.tels.add(numero);
+		     		
+		     		return this;
+		     		
+		     	}
 		       public Personnel build() {
 		    	   return new Personnel(this);
 		       }
