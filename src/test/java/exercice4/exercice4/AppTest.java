@@ -1,5 +1,6 @@
 package exercice4.exercice4;
-
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -31,8 +32,21 @@ public class AppTest
     /**
      * Rigourous Test :-)
      */
+  
     public void testApp()
     {
-        assertTrue( true );
+		Personnel p1;
+		Personnel p2;
+		Personnel p3;
+		Personnel p4;
+		CompositePersonnels composite_1;
+		InterfacePersonnel intr ;
+		p1= new Personnel.Builder(0, "aa", "jj",LocalDate.parse("1996-20-03",DateTimeFormatter.ISO_DATE)).build();
+		p2= new Personnel.Builder(0, "bb", "kk",LocalDate.parse("1999-08-29",DateTimeFormatter.ISO_DATE)).build();
+		p3= new Personnel.Builder(0, "cc", "ll",LocalDate.parse("1991-31-05",DateTimeFormatter.ISO_DATE)).build();
+		p4= new Personnel.Builder(0, "dd", "nn",LocalDate.parse("2004-03-01",DateTimeFormatter.ISO_DATE)).build();
+				 
+			
+    	
     }
 }
